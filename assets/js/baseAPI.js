@@ -10,5 +10,5 @@ $.ajaxPrefilter(
         //     }
         // }
         // 配置url加上统一的路
-        option.url='http://www.loulongbin.top:3007'+option.url
+        option.url='http://www.liulongbin.top:3007'+option.url
 })

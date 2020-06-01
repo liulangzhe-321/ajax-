@@ -42,7 +42,7 @@ $('#reg-form').on('submit',function(e){
     // console.log(data)
     $.ajax({
         type:'post',
-        url:'http://www.liulongbin.top:3007/api/reguser',
+        url:'/api/reguser',
         data:data,
         success:function(res){
             // console.log(res);
@@ -70,7 +70,7 @@ $('#login-from').on('submit',function(e){
 
     $.ajax({
         type:'post',
-        url:'http://www.liulongbin.top:3007/api/login',
+        url:'/api/login',
         data:data,
         success:function(res){
             if(res.status===1){
@@ -79,9 +79,13 @@ $('#login-from').on('submit',function(e){
                 )
             }
             // 登陆成功保存token
+            // 服务器带着token去访问后台
             localStorage.setItem('token',res.token)
 
             layer.msg('登陆成功')
+            // 跳转页面
+
+            location.href='/index.html'
             
         }
     })
