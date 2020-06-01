@@ -49,7 +49,7 @@ $('#reg-form').on('submit',function(e){
             if(res.status === 1){
                 // 失败返回对应得数据
                 // 是否重置表单  reset()DoM 中重置表单数据的方法
-                // $('#res_from').reset()
+                // $('#res_from')[0].reset()
                 return layer.msg(res.message);
             }
             // 成功
@@ -59,6 +59,31 @@ $('#reg-form').on('submit',function(e){
             $('#qudenglu').click();
            
             }
+    })
+})
+// 登录功能模块
+$('#login-from').on('submit',function(e){
+    // z阻止默认行为
+    e.preventDefault();
+    // 收集表单数据
+    var data =$(this).serialize();
+
+    $.ajax({
+        type:'post',
+        url:'http://www.liulongbin.top:3007/api/login',
+        data:data,
+        success:function(res){
+            if(res.status===1){
+                return layer.message(
+                    res.message
+                )
+            }
+            // 登陆成功保存token
+            localStorage.setItem('token',res.token)
+
+            layer.msg('登陆成功')
+            
+        }
     })
 })
 })
