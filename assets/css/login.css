@@ -11,7 +11,8 @@ body{
 .logo{
    padding-top:30px ;
 }
-.login,.reg{
+.login,
+.reg{
     width: 400px;
     height: 310px;
     background-color: aliceblue;
