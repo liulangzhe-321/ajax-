@@ -33,17 +33,17 @@ function getUserInfo(){
             renderHtml(res.data)
         },
         // complete 在ajax 请求完以后触发
-        complete:function(xhr){
-            // 判断,如果获取用户信息失败,说明该用户没有登录, 那么跳转到login.html
-            console.log(xhr)
-            if(xhr.responseJSON.status=== 1 && xhr.responseJSON.message==="身份认证失败！"){
-                location.href="/login.html"
-            }
-        },
-        // headers配置请求头
-        headers:{
-            Authorization:localStorage.getItem('token')
-        }
+        // complete:function(xhr){
+        //     // 判断,如果获取用户信息失败,说明该用户没有登录, 那么跳转到login.html
+        //     console.log(xhr)
+        //     if(xhr.responseJSON.status=== 1 && xhr.responseJSON.message==="身份认证失败！"){
+        //         location.href="/login.html"
+        //     }
+        // },
+        // // headers配置请求头
+        // headers:{
+        //     Authorization:localStorage.getItem('token')
+        // }
     })
 }
 // 渲染页面上函数
