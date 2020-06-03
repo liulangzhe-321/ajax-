@@ -24,7 +24,7 @@ function getUserInfo(){
     $.ajax({
         url:'/my/userinfo',
         success:function(res){
-            console.log(res);
+            // console.log(res);
             // 判断获取用户信息是不是成功
             if(res.status!==0){
                return layer.msg(res.message)
